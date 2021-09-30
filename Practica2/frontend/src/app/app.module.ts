@@ -9,6 +9,8 @@ import { CardsComponent } from './components/cards/cards.component';
 import { TableconComponent } from './components/tablecon/tablecon.component';
 import { ModalReporComponent } from './components/modal-repor/modal-repor.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import { ModalReporComponent } from './components/modal-repor/modal-repor.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

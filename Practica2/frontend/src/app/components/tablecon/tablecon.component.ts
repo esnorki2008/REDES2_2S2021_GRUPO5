@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-tablecon',
   templateUrl: './tablecon.component.html',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableconComponent implements OnInit {
   tableHeader:string[]=["#","Carnet","Nombre","Proyecto","Fecha","Servidor"];
-  content:any[] = [{carnet:"Mark",nombre:"Otto",proyecto:"@mdo",fecha:"hoy",servidor:"no se"}]
+  tableContent:any[] = [{carnet:"Mark",nombre:"Otto",proyecto:"@mdo",fecha:"hoy",servidor:"no se"}]
   condition:boolean =false;
-  constructor() { }
+  closeResult = '';
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
@@ -19,5 +22,24 @@ export class TableconComponent implements OnInit {
   }
   hide():void{
     this.condition=false;
+  }
+
+
+  open(cnt:any,item:any) {
+    this.modalService.open(cnt, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 }
