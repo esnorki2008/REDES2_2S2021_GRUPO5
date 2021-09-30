@@ -1,0 +1,38 @@
+<div class="table-responsive separator">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th *ngFor="let item of tableHeader; index as i;" scope="col">{{item}}</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of content; index as i;" (click)="modal()">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.carnet}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.proyecto}}</td>
+            <td>{{item.fecha}}</td>
+            <td>{{item.servidor}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+      <div *ngIf="condition" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Reporte Individual</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="hide()"></button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
