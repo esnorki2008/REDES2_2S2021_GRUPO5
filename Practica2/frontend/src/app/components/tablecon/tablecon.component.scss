@@ -1,0 +1,27 @@
+$bgDefault      : #14213d;
+$bgHighlight    : #d9ed92;
+$colDefault     : #e5e5e5;
+$colHover       : #fca311; 
+
+.separator{
+    margin-top: 2%;
+}
+
+.defaultColor{
+    background-color: $bgDefault;
+    color: $colDefault;
+}
+
+.hov{
+    cursor: pointer;
+}
+.btn{
+    border-color: $colHover;
+    background: $colHover;
+    &:hover{
+        border-color: $bgHighlight;
+        background: $bgHighlight;
+        color: $bgDefault; 
+        
+    }
+}
