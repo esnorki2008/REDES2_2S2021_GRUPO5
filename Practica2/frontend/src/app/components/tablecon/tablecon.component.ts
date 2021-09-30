@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit,Input } from '@angular/core';
+import { Reporte } from 'src/app/interface/reporte';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -9,7 +9,11 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class TableconComponent implements OnInit {
   tableHeader:string[]=["#","Carnet","Nombre","Proyecto","Fecha","Servidor"];
-  tableContent:any[] = [{carnet:"Mark",nombre:"Otto",proyecto:"@mdo",fecha:"hoy",servidor:"no se"}]
+
+  selectedObj:any= {carnet:"",nombre:"",proyecto:"",fecha:"",servidor:""};
+
+  @Input() tableContent:Reporte[] = [
+  ]
   condition:boolean =false;
   closeResult = '';
   constructor(private modalService: NgbModal) { }
@@ -26,6 +30,7 @@ export class TableconComponent implements OnInit {
 
 
   open(cnt:any,item:any) {
+    this.selectedObj = item;
     this.modalService.open(cnt, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {

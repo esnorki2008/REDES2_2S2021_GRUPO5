@@ -12,11 +12,11 @@
           </div>
           <button type="button" class="btn btn-primary col-sm-4">Buscar</button>
 
-          <app-tablecon></app-tablecon>
+          <app-tablecon [tableContent] = "tableContent" ></app-tablecon>
         </div>
       </form>
       <p class="solitud"> 
-        Solicitud atendida por: 
+        Solicitud atendida por: {{solicitudAten}}
       </p>
     </div>
 </div>

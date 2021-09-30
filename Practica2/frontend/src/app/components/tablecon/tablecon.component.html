@@ -1,25 +1,38 @@
 <ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+  <div class="modal-header  defaultColor">
+    <h4  id="modal-basic-title" class="modal-title ">Reporte Individual</h4>
+    <button type="button" class="close btn" aria-label="Close" (click)="modal.dismiss('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <form>
-      <div class="form-group">
-        <label for="dateOfBirth">Date of birth</label>
-        <div class="input-group">
-          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
-          </div>
-        </div>
+    <form >
+            
+      <div class="mb-3">
+        <label for="carnetInput" class="form-label">Carnet</label>
+        <input type="text" class="form-control" id="carnetInput" [value]="selectedObj.carnet"  disabled>
       </div>
+      <div class="mb-3">
+          <label for="nombreInput" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombreInput" [value]="selectedObj.nombre" disabled>
+        </div>
+        <div class="mb-3">
+          <label for="cursoInput" class="form-label">Curso/Proyecto</label>
+          <input type="text" class="form-control" id="cursoInput" [value]="selectedObj.proyecto" disabled>
+        </div>
+        <div class="mb-3">
+          <label for="cuerpoInput" class="form-label">Cuerpo del reporte</label>
+          <textarea class="form-control" id="cuerpoInput" rows="3"[value]="selectedObj.fecha"  disabled></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="servidorInput" class="form-label">Servidor</label>
+          <input class="form-control" id="servidorInput" rows="3"[value]="selectedObj.servidor"  disabled>
+        </div>
+     
+      
     </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
   </div>
 </ng-template>
 
@@ -34,7 +47,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of tableContent; index as i;" (click)="open(content,item)">
+          <tr class="hov" *ngFor="let item of tableContent; index as i;" (click)="open(content,item)">
             <th scope="row">{{i+1}}</th>
             <td>{{item.carnet}}</td>
             <td>{{item.nombre}}</td>
@@ -45,23 +58,6 @@
           
         </tbody>
       </table>
-      <div *ngIf="condition" tabindex="-1">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Reporte Individual</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="hide()"></button>
-            </div>
-            <div class="modal-body">
-              <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
   </div>
 
 
