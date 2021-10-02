@@ -22,14 +22,18 @@
         </div>
         <div class="mb-3">
           <label for="cuerpoInput" class="form-label">Cuerpo del reporte</label>
-          <textarea class="form-control" id="cuerpoInput" rows="3"[value]="selectedObj.fecha"  disabled></textarea>
+          <textarea class="form-control" id="cuerpoInput" rows="3"[value]="selectedObj.cuerpo"  disabled></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="fechaInput" class="form-label">fecha</label>
+          <input class="form-control" id="fechaInput" rows="3"[value]="selectedObj.fecha"  disabled>
         </div>
         <div class="mb-3">
           <label for="servidorInput" class="form-label">Servidor</label>
           <input class="form-control" id="servidorInput" rows="3"[value]="selectedObj.servidor"  disabled>
         </div>
      
-      
+       <p>Solicitud atendida por: {{aten}}</p>
     </form>
   </div>
   <div class="modal-footer">

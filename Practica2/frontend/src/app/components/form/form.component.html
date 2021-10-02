@@ -7,23 +7,23 @@
             
             <div class="mb-3">
               <label for="carnetInput" class="form-label">Carnet</label>
-              <input type="text" class="form-control" id="carnetInput" >
+              <input type="text" class="form-control" id="carnetInput" name="carnet" [(ngModel)]="nReporte.carnet" >
             </div>
             <div class="mb-3">
                 <label for="nombreInput" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombreInput" >
+                <input type="text" class="form-control" id="nombreInput" name="nombre" [(ngModel)]="nReporte.nombre">
               </div>
               <div class="mb-3">
                 <label for="cursoInput" class="form-label">Proyecto</label>
-                <input type="text" class="form-control" id="cursoInput" >
+                <input type="text" class="form-control" id="cursoInput" name="proyecto" [(ngModel)]="nReporte.proyecto">
               </div>
               <div class="mb-3">
                 <label for="cuerpoInput" class="form-label">Cuerpo del reporte</label>
-                <textarea class="form-control" id="cuerpoInput" rows="3"></textarea>
+                <textarea class="form-control" id="cuerpoInput" rows="3" name="cuerpo" [(ngModel)]="nReporte.cuerpo"></textarea>
               </div>
            
             <div class="centformi">
-                <button type="button" class="btn btn-primary">Crear</button>
+                <button type="button" class="btn btn-primary" (click)="createReps()">Crear</button>
             </div>
             
           </form>

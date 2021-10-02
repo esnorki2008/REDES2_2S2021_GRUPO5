@@ -1,21 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Reporte } from '../interface/reporte';
+import { Reporte, ReporteCreate } from '../interface/reporte';
 @Injectable({
   providedIn: 'root'
 })
 export class ReqService {
-  server:string = ""
-  port:string = ""
+  server:string = "localhost"
+  port:string = "3000"
   url:string = `http://${this.server}:${this.port}`
   
 
   getAll(){
-    return this.http.get<Reporte[]>(this.url);
+    return this.http.get<any>(this.url+"/getReports");
   }
 
-  create(rep:Reporte){
-    return this.http.post(this.url,rep);
+  create(rep:ReporteCreate){
+    console.log(rep)
+    return this.http.post(this.url+'/createReport/',rep);
   }
 
   constructor(private http: HttpClient) { }

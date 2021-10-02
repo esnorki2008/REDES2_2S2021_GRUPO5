@@ -8,11 +8,11 @@
         <div class="form-group row">
           <label for="inputFiltrado" class="col-sm-2 col-form-label">Carnet</label>
           <div class="col-sm-6">
-            <input type="password" class="form-control" id="inputFiltrado" placeholder="Filtrado">
+            <input type="text" class="form-control" id="inputFiltrado" placeholder="Filtrado" name="filtro" [(ngModel)]="filtro">
           </div>
-          <button type="button" class="btn btn-primary col-sm-4">Buscar</button>
+          <button type="button" class="btn btn-primary col-sm-4" (click)="fetchReps()">Buscar</button>
 
-          <app-tablecon [tableContent] = "tableContent" ></app-tablecon>
+          <app-tablecon [tableContent] = "tableContent" [aten]="solicitudAten" ></app-tablecon>
         </div>
       </form>
       <p class="solitud"> 

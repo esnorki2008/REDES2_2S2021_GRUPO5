@@ -14,6 +14,9 @@ export class TableconComponent implements OnInit {
 
   @Input() tableContent:Reporte[] = [
   ]
+  @Input() aten:String = ""
+
+
   condition:boolean =false;
   closeResult = '';
   constructor(private modalService: NgbModal) { }

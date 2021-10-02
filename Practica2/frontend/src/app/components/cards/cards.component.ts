@@ -10,11 +10,11 @@ import { ReqService } from 'src/app/services/req.service';
 export class CardsComponent implements OnInit {
   
   tableContent:Reporte[] = [
-    {carnet:"Mark1",nombre:"Otto",proyecto:"@mdo",fecha:"hoy",servidor:"no se"},
-    {carnet:"Mark2",nombre:"Otto",proyecto:"@mdo",fecha:"hoy",servidor:"no se"},
-    {carnet:"Mark3",nombre:"Otto",proyecto:"@mdo",fecha:"hoy",servidor:"no se"},
-    {carnet:"Mark4",nombre:"Otto",proyecto:"@mdo",fecha:"hoy",servidor:"no se"},
-    {carnet:"Mark4",nombre:"Otto",proyecto:"@mdo",fecha:"hoy",servidor:"no se"}
+    {carnet:"Mark1",nombre:"Otto",proyecto:"@mdo",fecha:"hoy",servidor:"no se",cuerpo:""},
+    {carnet:"Mark2",nombre:"Otto",proyecto:"@mdo",fecha:"hoy",servidor:"no se",cuerpo:""},
+    {carnet:"Mark3",nombre:"Otto",proyecto:"@mdo",fecha:"hoy",servidor:"no se",cuerpo:""},
+    {carnet:"Mark4",nombre:"Otto",proyecto:"@mdo",fecha:"hoy",servidor:"no se",cuerpo:""},
+    {carnet:"Mark4",nombre:"Otto",proyecto:"@mdo",fecha:"hoy",servidor:"no se",cuerpo:""}
   ]
 
   filtro:string = ""
@@ -22,6 +22,7 @@ export class CardsComponent implements OnInit {
 
 
   filtrar():void{
+    
     let filtrRepo:Reporte[] = []
     for (let index = 0; index < this.tableContent.length; index++) {
       const element:Reporte = this.tableContent[index];
@@ -29,7 +30,7 @@ export class CardsComponent implements OnInit {
         filtrRepo.push(element)
       }
     }
-
+    console.log()
     this.tableContent = filtrRepo;
   }
   
@@ -39,10 +40,12 @@ export class CardsComponent implements OnInit {
     this.reqs.getAll().subscribe((data: any)=>{
       this.tableContent = data.reportes
       this.solicitudAten = data.solicitud
+      this.filtrar()
     }, err => console.log(err))
   }
 
   ngOnInit(): void {
+    this.fetchReps();
   }
 
 }
