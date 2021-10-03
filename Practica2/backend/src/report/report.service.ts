@@ -19,6 +19,8 @@ export class ReportService {
       resultReports += "{\"carnet\":" + "\"" + mongoReports[i].carnet + "\",";
       resultReports += "\"nombre\":" + "\"" + mongoReports[i].nombre + "\",";
       resultReports += "\"proyecto\":" + "\"" + mongoReports[i].proyecto + "\",";
+      resultReports += "\"fecha\":" + "\"" + mongoReports[i].fecha + "\",";
+      resultReports += "\"servidor\":" + "\"" + mongoReports[i].servidor + "\",";
       if (i == (mongoReports.length - 1)) {
         resultReports += "\"cuerpo\":" + "\"" + mongoReports[i].cuerpo + "\"}";
       }
@@ -33,10 +35,14 @@ export class ReportService {
   }
 
   async createReport(report: any) {
+    const server_intern = this.configService.get<string>('server_intern');
+    
     const newReport = new this.reportModel({
         carnet: report.carnet,
         nombre: report.nombre,
         proyecto: report.proyecto,
+        fecha: report.fecha,
+        servidor: server_intern,
         cuerpo: report.cuerpo
     });
     const id_rep = await newReport.save();
