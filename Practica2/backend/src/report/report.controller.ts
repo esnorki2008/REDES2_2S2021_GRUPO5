@@ -11,6 +11,7 @@ export class ReportController {
   @Get('/getReports')
   async getReports(@Res() res: Response) {
     const result = await this.reportService.getReports();
+    console.log(result);
     return res.status(HttpStatus.OK).send(JSON.parse(result));
   }
 

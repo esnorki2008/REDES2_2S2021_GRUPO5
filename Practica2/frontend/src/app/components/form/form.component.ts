@@ -14,7 +14,7 @@ export class FormComponent implements OnInit {
     carnet: "201700340",
     nombre: "nombre 0",
     proyecto:"Proyecto 0",
-    fecha: this.date_initial.getDay + "/" + this.date_initial.getMonth().toString() + "/" + + this.date_initial.getFullYear().toString(),
+    fecha: this.date_initial.getDate() + "/" + (this.date_initial.getUTCMonth() + 1).toString() + "/" + this.date_initial.getFullYear().toString(),
     servidor: "201700343",
     cuerpo:"Cuerpo del proyecti 0 en string"
   }
@@ -32,7 +32,7 @@ export class FormComponent implements OnInit {
         carnet: "",
         nombre: "",
         proyecto:"",
-        fecha:date.getDay().toString() + "/" + date.getMonth().toString() + "/" + + date.getFullYear().toString(),
+        fecha:date.getDate() + "/" + (date.getUTCMonth() + 1).toString() + "/" + date.getFullYear().toString(),
         servidor:"",
         cuerpo:""
       }
