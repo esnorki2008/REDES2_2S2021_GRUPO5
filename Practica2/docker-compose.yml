@@ -25,6 +25,38 @@ services:
       red-servidores:
         ipv4_address: 172.35.65.2
 
+  server2:
+      build: ./backend/
+      ports:
+      - "3022:3022"
+      depends_on:
+      - mongodb
+      environment:
+      - DB=10.10.5.10
+      - PORT=3022
+      - SERVER=201700002
+      networks:
+        red-db:
+          ipv4_address: 10.10.5.3
+        red-servidores:
+          ipv4_address: 172.35.65.3
+
+  server3:
+        build: ./backend/
+        ports:
+        - "3023:3023"
+        depends_on:
+        - mongodb
+        environment:
+        - DB=10.10.5.10
+        - PORT=3023
+        - SERVER=201700003
+        networks:
+          red-db:
+            ipv4_address: 10.10.5.4
+          red-servidores:
+            ipv4_address: 172.35.65.4
+
   #se crea un segundo servicio con un contenedor el cual utiliza la imagen api-servidor2
   #esta api despliega un mensaje simple, al visitar el endpoint
   # http://localhost:5001/mensaje
@@ -35,6 +67,8 @@ services:
       - ./proxy/default.conf:/etc/nginx/nginx.conf:ro
     depends_on:
       - server1
+      - server2
+      - server3
     ports:
       - "5000:5000"
     networks:

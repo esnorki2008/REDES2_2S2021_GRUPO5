@@ -5,7 +5,7 @@ import { Reporte, ReporteCreate } from '../interface/reporte';
   providedIn: 'root'
 })
 export class ReqService {
-  server:string = "34.67.66.204"
+  server:string = "localhost"//"34.67.66.204"
   port:string = "5000"
   url:string = `http://${this.server}:${this.port}`
   
