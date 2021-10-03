@@ -21,7 +21,7 @@ services:
     - SERVER=201700001
     networks:
       red-db:
-        ipv4_address: 10.10.5.1
+        ipv4_address: 10.10.5.2
       red-servidores:
         ipv4_address: 172.35.65.2
 
