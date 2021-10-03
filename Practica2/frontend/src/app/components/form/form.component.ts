@@ -9,24 +9,31 @@ import { ReporteCreate } from 'src/app/interface/reporte';
 export class FormComponent implements OnInit {
 
   constructor(private reqs:ReqService) { }
+  date_initial = new Date();
   nReporte:ReporteCreate = {
     carnet: "201700340",
     nombre: "nombre 0",
     proyecto:"Proyecto 0",
+    fecha: this.date_initial.getDate() + "/" + (this.date_initial.getUTCMonth() + 1).toString() + "/" + this.date_initial.getFullYear().toString(),
+    servidor: "201700343",
     cuerpo:"Cuerpo del proyecti 0 en string"
   }
   
 
   ngOnInit(): void {
+    var date_initial2 = new Date();
+    console.log(date_initial2.getUTCMonth())
   }
   createReps():void{
-    
+    let date = new Date();
 
     this.reqs.create(this.nReporte).subscribe((data: any)=>{
       this.nReporte = {
         carnet: "",
         nombre: "",
         proyecto:"",
+        fecha:date.getDate() + "/" + (date.getUTCMonth() + 1).toString() + "/" + date.getFullYear().toString(),
+        servidor:"",
         cuerpo:""
       }
       
