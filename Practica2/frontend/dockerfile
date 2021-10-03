@@ -1,13 +1,6 @@
-# Stage 1: Compile and Build angular codebase
-
-# Use official node image as the base image
-FROM node:latest as build
-
-# Set the working directory
-WORKDIR /usr/local/app
-
-# Add the source code to app
+FROM node:14
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
 COPY . .
-
-# Install all the dependencies
-RUN npm start
+CMD [ "npm", "start"]

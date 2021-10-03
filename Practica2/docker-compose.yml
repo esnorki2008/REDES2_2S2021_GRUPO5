@@ -46,7 +46,7 @@ services:
     stdin_open: true
     command: npm start
     ports:
-        - "80:80"
+        - "4200:4200"
     networks:
       red-servidores:
         ipv4_address: 172.35.65.6
