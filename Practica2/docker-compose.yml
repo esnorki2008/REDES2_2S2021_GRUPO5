@@ -50,7 +50,7 @@ services:
         environment:
         - DB=10.10.15.10
         - PORT=3023
-        - SERVER=201700345
+        - SERVER=201700327
         networks:
           red-db:
             ipv4_address: 10.10.15.4
