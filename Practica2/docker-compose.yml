@@ -7,7 +7,7 @@ services:
       - "27017:27017"
     networks:
       red-db:
-        ipv4_address: 10.10.5.10
+        ipv4_address: 10.10.15.10
       
   server1:
     build: ./backend/
@@ -16,14 +16,14 @@ services:
     depends_on:
      - mongodb
     environment:
-    - DB=10.10.5.10
+    - DB=10.10.15.10
     - PORT=3021
-    - SERVER=201700001
+    - SERVER=201700886
     networks:
       red-db:
-        ipv4_address: 10.10.5.2
+        ipv4_address: 10.10.15.2
       red-servidores:
-        ipv4_address: 172.35.65.2
+        ipv4_address: 172.35.75.2
 
   server2:
       build: ./backend/
@@ -32,14 +32,14 @@ services:
       depends_on:
       - mongodb
       environment:
-      - DB=10.10.5.10
+      - DB=10.10.15.10
       - PORT=3022
-      - SERVER=201700002
+      - SERVER=201700343
       networks:
         red-db:
-          ipv4_address: 10.10.5.3
+          ipv4_address: 10.10.15.3
         red-servidores:
-          ipv4_address: 172.35.65.3
+          ipv4_address: 172.35.75.3
 
   server3:
         build: ./backend/
@@ -48,14 +48,14 @@ services:
         depends_on:
         - mongodb
         environment:
-        - DB=10.10.5.10
+        - DB=10.10.15.10
         - PORT=3023
-        - SERVER=201700003
+        - SERVER=201700345
         networks:
           red-db:
-            ipv4_address: 10.10.5.4
+            ipv4_address: 10.10.15.4
           red-servidores:
-            ipv4_address: 172.35.65.4
+            ipv4_address: 172.35.75.4
 
   #se crea un segundo servicio con un contenedor el cual utiliza la imagen api-servidor2
   #esta api despliega un mensaje simple, al visitar el endpoint
@@ -73,7 +73,7 @@ services:
       - "5000:5000"
     networks:
       red-servidores:
-        ipv4_address: 172.35.65.5
+        ipv4_address: 172.35.75.5
 
   frontend:
     build: ./frontend/
@@ -83,9 +83,9 @@ services:
         - "4200:4200"
     networks:
       red-servidores:
-        ipv4_address: 172.35.65.6
+        ipv4_address: 172.35.75.6
       red-frontend:
-        ipv4_address: 192.168.45.2
+        ipv4_address: 192.168.55.2
 #aqui se crean las networks
 networks:
   #se crea la red "red-db" usando el driver de tipo "bridge"
@@ -93,15 +93,15 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 10.10.5.0/24
+        - subnet: 10.10.15.0/24
   #se crea la red "red-servidores" usando el driver de tipo "bridge"
   red-servidores:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.35.65.0/24
+        - subnet: 172.35.75.0/24
   red-frontend:
     driver: bridge
     ipam:
       config:
-        - subnet: 192.168.45.0/24
+        - subnet: 192.168.55.0/24
