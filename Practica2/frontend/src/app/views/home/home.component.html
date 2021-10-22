@@ -1,25 +1,23 @@
 <nav class="navbar navbar-default" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <p class="navbar-brand" >Grupo 5</p>
+    <div class="navbar__barspace">
+        <div class="navbar-header">
+            <p class="navbar-brand" >Grupo 5</p>
+            
+          </div>
+    </div>
+    <div class="navbar__barspace">
+        <div class="navbar__btn">
+            <div class="navbar__text" (click)="this.showReportsClicked()">
+                Mostrar Reportes
+            </div>
+            <div class="navbar__text " (click)="this.showAttendanceClicked()">
+                Mostrar Asistencia
+            </div>
+        </div>
     </div>
 </nav>
 
-
-<div class="container separator  ">
-    <div class="row">
-        <div class="col-sm-3 ">
-            <div class="centerrForm">
-                <app-form></app-form>
-            </div>
-        </div>
-        <div class="col-sm-9">
-                <div >
-                    <app-cards></app-cards>
-                </div>
-                
-        </div>
-      </div>
-    
-</div>
+<app-reports *ngIf ="showReports"></app-reports>
+<app-attendance *ngIf ="!showReports"></app-attendance>
 

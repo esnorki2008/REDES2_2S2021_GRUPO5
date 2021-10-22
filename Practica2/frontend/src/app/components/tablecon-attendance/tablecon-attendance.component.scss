@@ -1,0 +1,58 @@
+$bgDefault      : #14213d;
+$bgHighlight    : #d9ed92;
+$colDefault     : #e5e5e5;
+$colHover       : #fca311; 
+
+.separator{
+    margin-top: 2%;
+}
+
+.defaultColor{
+    background-color: $bgDefault;
+    color: $colDefault;
+}
+.cnt{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.mimg{
+    width: 250px;
+    height: 250px;
+    &:hover{
+        width: 255px;
+        height: 255px;
+    }
+}
+
+.mod{
+    &__container{
+        display: flex;
+
+    }
+
+    &__content{
+        flex-grow: 1;
+    }
+
+ 
+}
+
+.sep{
+    padding: 0.1rem;
+}
+
+.hov{
+    cursor: pointer;
+}
+.btn{
+    border-color: $colHover;
+    background: $colHover;
+    &:hover{
+        border-color: $bgHighlight;
+        background: $bgHighlight;
+        color: $bgDefault; 
+        
+    }
+}

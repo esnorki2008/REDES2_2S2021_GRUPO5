@@ -1,0 +1,35 @@
+<div class="card formc">
+    <div class="card-header encaform">
+            Agregar Asistencia
+    </div>
+    <div class="card-body">
+        <form >
+            
+            <div class="mb-3">
+              <label for="carnetInput" class="form-label">Carnet</label>
+              <input type="text" class="form-control" id="carnetInput" name="carnetInput" [(ngModel)]="nReporte.carnet" >
+            </div>
+            <div class="mb-3">
+                <label for="nombreInput" class="form-label">Nombre Estudiante</label>
+                <input type="text" class="form-control" id="nombreEstudianteInput" name="nombreEstudianteInput" [(ngModel)]="nReporte.nombreEstudiante">
+              </div>
+              <div class="mb-3">
+                <label for="cursoInput" class="form-label">Nombre Evento</label>
+                <input type="text" class="form-control" id="nombreEventoInput" name="nombreEventoInput" [(ngModel)]="nReporte.nombreEvento">
+              </div>
+              <div class="mb-3">
+                <label for="cuerpoInput" class="form-label">Id Evento</label>
+                <input type="number" class="form-control" id="idEventoInput" name="idEventoInput" [(ngModel)]="nReporte.idEvento">
+              </div>
+              <div class="mb-3">
+                <label for="cuerpoInput" class="form-label">Cargar Imagen</label>
+                <input type="file" class="form-control" id="imagenInput" name="imagenInput" >
+              </div>
+           
+            <div class="centformi">
+                <button type="button" class="btn btn-primary" (click)="this.createAtte()">Crear</button>
+            </div>
+            
+          </form>
+    </div>
+</div>

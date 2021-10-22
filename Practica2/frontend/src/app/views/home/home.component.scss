@@ -4,45 +4,42 @@ $bgHighlight    : #d9ed92;
 $colDefault     : #e5e5e5;
 $colHover       : #fca311; 
 
-.btn{
-    border-color: $colHover;
-    background: $colHover;
+.navbar{
+  &__text{
+    color: $colDefault;
+    margin-right: 2rem;
     &:hover{
-        border-color: $bgHighlight;
-        background: $bgHighlight;
-        color: $bgDefault; 
+      cursor: pointer;
+      color: $bgHighlight;
     }
+  }
+  &__btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-right: 2rem;
+  }
+  &__barspace{
+    flex-grow: 1
+  }
 }
 
 .separator{
     margin-top: 1%;
 }
 
-
-.centerrForm{
-    
-    display: flex;
-    align-items: center;
-    align-content: center;
-    
-    justify-content: center;
-    flex-shrink: 0;
-    flex: 1 0 auto;
-    height: 80vh;
-
-}
-
 .navbar-default {
     background-color: $bgDefault;
     border-color: $bgHighlight;
     display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+    flex-direction: row;
+   
 
     .navbar-brand {
         color: $colDefault;
         font-size: 30px;
+        display: flex;
+        justify-content: center;
         &:hover, &:focus {
             color: $colHover; 
         }}
@@ -52,44 +49,3 @@ $colHover       : #fca311;
 
 
   
-  $bubble-count: 50;
-  $sway-type: "sway-left-to-right", "sway-right-to-left";
-  
-  @function random_range($min, $max) {
-    $rand: random();
-    $random_range: $min + floor($rand * (($max - $min) + 1));
-    @return $random_range;
-  }
-  
-  @function sample($list) {
-    @return nth($list, random(length($list)));
-  }
-  
-
-  
-  
-  @keyframes float-up {
-    to {
-      transform: translateY(-175vh);
-    }
-  }
-  
-  @keyframes sway-left-to-right {
-    from {
-      transform: translateX(-100%);
-    }
-  
-    to {
-      transform: translateX(100%);
-    }
-  }
-  
-  @keyframes sway-right-to-left {
-    from {
-      transform: translateX(100%);
-    }
-  
-    to {
-      transform: translateX(-100%);
-    }
-  }
