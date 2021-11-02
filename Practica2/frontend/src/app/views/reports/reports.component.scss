@@ -1,0 +1,33 @@
+/* Red */
+$bgDefault      : #14213d;
+$bgHighlight    : #d9ed92;
+$colDefault     : #e5e5e5;
+$colHover       : #fca311; 
+
+.btn{
+    border-color: $colHover;
+    background: $colHover;
+    &:hover{
+        border-color: $bgHighlight;
+        background: $bgHighlight;
+        color: $bgDefault; 
+    }
+}
+
+.separator{
+    margin-top: 1%;
+}
+
+
+.centerrForm{
+    
+    display: flex;
+    align-items: center;
+    align-content: center;
+    
+    justify-content: center;
+    flex-shrink: 0;
+    flex: 1 0 auto;
+    height: 80vh;
+
+}

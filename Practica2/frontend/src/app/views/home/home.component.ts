@@ -6,9 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  showReports:boolean = false;
   constructor() { }
-
+  showReportsClicked(){
+    this.showReports = true;
+  }
+  showAttendanceClicked(){
+    this.showReports = false;
+  }
   ngOnInit(): void {
   }
 
