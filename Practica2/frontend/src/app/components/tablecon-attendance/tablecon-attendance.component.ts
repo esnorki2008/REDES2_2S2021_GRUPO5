@@ -9,13 +9,12 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./tablecon-attendance.component.scss']
 })
 export class TableconAttendanceComponent implements OnInit {
-  tableHeader:string[]=["#","Carnet","Nombre Estudiante","Nombre Evento","Fecha","Id Evento","Imagen"];
+  tableHeader:string[]=["#","Carnet","Nombre Estudiante","Nombre Evento","Id Evento","Imagen"];
 
   selectedObj:Asistencia= {
     carnet: "",
     nombreEstudiante: "",
     nombreEvento:"",
-    fecha: "",
     idEvento: 0,
     imagen:""
   };

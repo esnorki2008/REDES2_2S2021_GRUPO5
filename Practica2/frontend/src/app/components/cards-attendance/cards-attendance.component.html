@@ -10,16 +10,16 @@
             <div class="cad__content "> 
               <label for="inputFiltrado" class="col-form-label cad__sep">Filtrar por evento id</label>
               <div >
-                <input type="text" class="form-control cad__sep" id="inputFiltrado" placeholder="Filtrado" name="filtro" [(ngModel)]="filtro">
+                <input type="text" class="form-control cad__sep" id="inputFiltrado" placeholder="Filtrado" name="filtro" [(ngModel)]="filtroId">
               </div>
-              <button type="button" class="btn btn-primary cad__sep" (click)="fetchReps()">Listar</button>
+              <button type="button" class="btn btn-primary cad__sep" (click)="fetchReps(1)">Listar</button>
             </div>
             <div class="cad__content"> 
               <label for="inputFiltrado" class="col-form-label cad__sep">Filtrar por alumno carnet</label>
               <div >
-                <input type="text" class="form-control cad__sep" id="inputFiltrado" placeholder="Filtrado" name="filtro" [(ngModel)]="filtro">
+                <input type="text" class="form-control cad__sep" id="inputFiltrado" placeholder="Filtrado" name="filtro" [(ngModel)]="filtroCarnet">
               </div>
-              <button type="button" class="btn btn-primary cad__sep" (click)="fetchReps()">Listar</button>
+              <button type="button" class="btn btn-primary cad__sep" (click)="fetchReps(2)">Listar</button>
             </div>
           </div>
             

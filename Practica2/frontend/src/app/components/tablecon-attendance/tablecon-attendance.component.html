@@ -26,10 +26,6 @@
             <label for="cursoInput" class="form-label">Nombre Evento</label>
             <input type="text" class="form-control" id="nombreEventoInput" [value]="selectedObj.nombreEvento" disabled>
           </div>
-          <div class="mb-3 sep">
-            <label for="cuerpoInput" class="form-label">Fecha</label>
-            <input  type="text" class="form-control" id="fechaInput" rows="3"[value]="selectedObj.fecha"  disabled>
-          </div>
         </div>
         <div class="mb-3 ">
           <label for="nombreInput" class="form-label">Nombre Estudiante</label>
@@ -68,7 +64,6 @@
               <td>{{item.carnet}}</td>
               <td>{{item.nombreEstudiante}}</td>
               <td>{{item.nombreEvento}}</td>
-              <td>{{item.fecha}}</td>
               <td>{{item.idEvento}}</td>
               <td>{{item.imagen}}</td>
             </tr>

@@ -15,7 +15,6 @@ export class FormAttendanceComponent implements OnInit {
     carnet: "",
     nombreEstudiante: "",
     nombreEvento:"",
-    fecha: this.date_initial.getDate() + "/" + (this.date_initial.getUTCMonth() + 1).toString() + "/" + this.date_initial.getFullYear().toString(),
     idEvento: 0,
     imagen:""
   }
@@ -27,18 +26,24 @@ export class FormAttendanceComponent implements OnInit {
   }
   createAtte():void{
     let date = new Date();
-    /*
-    this.reqs.create(this.nReporte).subscribe((data: any)=>{
+    
+    let salida = {
+      carnet:this.nReporte.carnet,
+      n_estudiante:this.nReporte.nombreEstudiante,
+      n_evento:this.nReporte.nombreEvento,
+      id_evento:this.nReporte.idEvento
+    }
+
+    this.reqs.crearAsistencia(salida).subscribe((data: any)=>{
       this.nReporte = {
         carnet: "",
-        nombre: "",
-        proyecto:"",
-        fecha:date.getDate() + "/" + (date.getUTCMonth() + 1).toString() + "/" + date.getFullYear().toString(),
-        servidor:"",
-        cuerpo:""
+        nombreEstudiante: "",
+        nombreEvento:"",
+        idEvento:0,
+        imagen:""
       }
       
-    }, err => console.log("err"))*/
+    }, err => console.log("err"))
   }
 
 }
