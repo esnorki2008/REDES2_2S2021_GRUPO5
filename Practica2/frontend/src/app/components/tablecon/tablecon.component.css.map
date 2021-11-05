@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAKA,AAAA,UAAU,CAAA;EACN,UAAU,EAAE,EAAE;CACjB;;AAED,AAAA,aAAa,CAAA;EACT,gBAAgB,EAVF,OAAO;EAWrB,KAAK,EATS,OAAO;CAUxB;;AAED,AAAA,IAAI,CAAA;EACA,MAAM,EAAE,OAAO;CAClB;;AACD,AAAA,IAAI,CAAA;EACA,YAAY,EAfE,OAAO;EAgBrB,UAAU,EAhBI,OAAO;CAuBxB;;AATD,AAGI,IAHA,AAGC,MAAM,CAAA;EACH,YAAY,EApBF,OAAO;EAqBjB,UAAU,EArBA,OAAO;EAsBjB,KAAK,EAvBK,OAAO;CAyBpB",
-    "sources": [
-        "tablecon.component.scss"
-    ],
-    "names": [],
-    "file": "tablecon.component.css"
-}
