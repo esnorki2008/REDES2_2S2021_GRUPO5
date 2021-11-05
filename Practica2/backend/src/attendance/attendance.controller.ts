@@ -15,6 +15,13 @@ export class AttendanceController {
     return res.status(HttpStatus.OK).send(JSON.parse(result));
   }
 
+  @Get('/getAllAttendance')
+  async getAllAttendance(@Res() res: Response) {
+    const result = await this.reportService.getAllAttendance();
+    console.log(result);
+    return res.status(HttpStatus.OK).send(JSON.parse(result));
+  }
+
   @Get('/getEvents')
   async getEvents(@Req() req: Request, @Res() res: Response) {
     const result = await this.reportService.getEvents(req.body);

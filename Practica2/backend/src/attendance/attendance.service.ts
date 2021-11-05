@@ -53,6 +53,24 @@ export class AttendanceService {
     return resultEvent;
   }
 
+  async getAllAttendance() {
+    const mongoAttendance = await this.attendanceModel.find();
+
+    let resultAttendance: string = "{\"asistencia\":[";
+    for(let i: number = 0; i<mongoAttendance.length; i++){
+            resultAttendance += "{\"carnet\":" + "\"" + mongoAttendance[i].carnet + "\",";
+            resultAttendance += "\"n_estudiante\":" + "\"" + mongoAttendance[i].n_estudiante + "\",";
+            resultAttendance += "\"n_evento\":" + "\"" + mongoAttendance[i].n_evento + "\",";
+            resultAttendance += "\"id_evento\":" + "\"" + mongoAttendance[i].id_evento + "\"},";
+    }
+    if (resultAttendance[resultAttendance.length-1] == ","){
+        resultAttendance = resultAttendance.substring(0, resultAttendance.length-1);
+    }
+    resultAttendance += "]\n}";
+
+    return resultAttendance;
+  }
+
   async createAttendance(attendance: any) {
     
     const newAttendance = new this.attendanceModel({
